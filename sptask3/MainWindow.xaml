@@ -1,0 +1,38 @@
+﻿<Window x:Class="sptask3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sptask3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="720">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBox Margin="20" Name="fromname" Width="390"></TextBox>
+                <Button Margin="20" Content="File.." Name="fromfile" Width="127" Click="fromfile_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Margin="20" FontSize="20" VerticalAlignment="Center" Content="Password" Width="109"/>
+                <TextBox Margin="20" Name="password" Width="316"></TextBox>
+
+                <RadioButton Content="Encrypt " Name="Encrypt" GroupName="MyRadioGroup" Margin="10"/>
+                <RadioButton Content="Decrypt " Name="Decrypt"  GroupName="MyRadioGroup" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <ProgressBar Margin="20" Value="{Binding CurrentProgress, Mode=Default, UpdateSourceTrigger=PropertyChanged}" 
+                            Visibility="Visible" Width="628"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="3">
+                <Button FontStyle="Oblique" FontWeight="ExtraBold" Margin="400 20 20 20" Content="Start" Name="start" Width="127" Click="start_Click"/>
+                <Button FontWeight="ExtraBold" Margin="20" Content="Cancel" Name="Cancel" Width="111" Click="Cancel_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
